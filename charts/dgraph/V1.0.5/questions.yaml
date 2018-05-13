@@ -1,0 +1,12 @@
+categories:
+- database
+- no_sql
+questions:
+  - variable: config.secrets_name
+    description: "Secret with 'username' and 'password' keys."
+    default: "rabbitmq"
+    type: string
+  - variable: config.vhost
+    description: "Default Vhost"
+    default: "/"
+    type: string

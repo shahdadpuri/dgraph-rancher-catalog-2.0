@@ -1,0 +1,14 @@
+name: dgraph
+version: 1.0.5
+description: Not everything can fit in rows and columns. Meet Dgraph, world's most advanced graph database.
+home: https://dgraph.io/
+icon: https://dgraph.io/assets/images/logo.png
+keywords:
+- Dgraph
+- database
+- Graph
+- GraphQL
+- nosql
+maintainers:
+  - name: Michel Conrado Diz
+    email: micheldizssa@gmail.com

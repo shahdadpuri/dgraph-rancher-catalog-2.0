@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: dgraph
+  name: dgraph
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 5080
+    targetPort: 5080
+    name: zero-grpc
+  - port: 6080
+    targetPort: 6080
+    name: zero-http
+  - port: 8080
+    targetPort: 8080
+    name: server-http
+  - port: 9080
+    targetPort: 9080
+    name: server-grpc
+  - port: 8000
+    targetPort: 8000
+    name: ratel-http
+  selector:
+    run: dgraph
+status:
+  loadBalancer: {}
