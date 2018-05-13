@@ -9,6 +9,8 @@ keywords:
 - Graph
 - GraphQL
 - nosql
+sources:
+- https://github.com/MichelDiz/dgraph-rancher-catalog-2.0
 maintainers:
   - name: Michel Conrado Diz
     email: micheldizssa@gmail.com
