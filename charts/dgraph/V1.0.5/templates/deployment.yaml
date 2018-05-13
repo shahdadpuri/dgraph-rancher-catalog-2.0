@@ -66,16 +66,16 @@ spec:
       - name: datadir
         persistentVolumeClaim:
           claimName: datadir
-{{- if .Values.persistentVolume.enabled }}
-      volumeClaimTemplates:
-      - metadata:
-          name: datadir
-          annotations:
-            volume.alpha.kubernetes.io/storage-class: anything
-        spec:
-          accessModes:
-            - "ReadWriteOnce"
-          resources:
-            requests:
-              storage: 5Gi
-{{- end }}
+# {{- if .Values.persistentVolume.enabled }}
+#       volumeClaimTemplates:
+#       - metadata:
+#           name: datadir
+#           annotations:
+#             volume.alpha.kubernetes.io/storage-class: anything
+#         spec:
+#           accessModes:
+#             - "ReadWriteOnce"
+#           resources:
+#             requests:
+#               storage: 5Gi
+# {{- end }}
