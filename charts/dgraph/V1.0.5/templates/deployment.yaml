@@ -3,7 +3,7 @@ kind: StatefulSet
 metadata:
   name: {{ template "Dgraph.fullname" . }}
   labels:
-    app: {{ template "Dgraph.name" . }}
+    app: {{ template "Dgraph.fullname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: {{ .Release.Name | quote }}
     heritage: {{ .Release.Service | quote }}
@@ -13,11 +13,11 @@ spec:
   selector:
     matchLabels:
       release: {{ .Release.Name | quote }}
-      app: {{ template "Dgraph.name" . }}
+      app: {{ template "Dgraph.fullname" . }}
   template:
     metadata:
       labels:
-        app: {{ template "Dgraph.name" . }}
+        app: {{ template "Dgraph.fullname" . }}
         chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
         release: {{ .Release.Name | quote }}
         heritage: {{ .Release.Service | quote }}
