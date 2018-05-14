@@ -3,9 +3,9 @@ kind: StatefulSet
 metadata:
   name: {{ template "Dgraph.fullname" . }}
   labels:
-    app: {{ template "Dgraph.fullname" . }}
+    app: {{ template "Dgraph.name" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
+    release: {{ .Release.Name | quote }}
     heritage: "{{ .Release.Service }}"
 spec:
   serviceName: {{ template "Dgraph.fullname" . }}
