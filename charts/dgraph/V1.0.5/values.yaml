@@ -16,7 +16,7 @@ image:
 Dgraph-Server:
   enabled: true
 
-Dgraph-Zero:
+DgraphZero:
   enabled: true
   command: "dgraph zero --my="
   port: 5080
