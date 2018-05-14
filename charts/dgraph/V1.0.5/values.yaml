@@ -18,6 +18,8 @@ Dgraph-Server:
 
 Dgraph-Zero:
   enabled: true
+  command: "dgraph zero --my="
+  port: 5080
 
 Ratel:
   enabled: true

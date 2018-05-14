@@ -6,7 +6,7 @@ questions:
     description: "Secret with 'username' and 'password' keys."
     default: "rabbitmq"
     type: string
-  - variable: config.vhost
-    description: "Default Vhost"
-    default: "/"
+  - variable: config.DefaultHostName
+    description: "Default HostName"
+    default: "0.0.0.0"
     type: string
