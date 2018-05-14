@@ -10,7 +10,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: {{ .Values.config.config.DgraphZero_port }}
+  - port: {{ .Values.config.DgraphZero_port }}
     targetPort: {{ .Values.config.DgraphZero_port }}
     name: zero-grpc
   - port: {{ .Values.config.DgraphZero_port_http }}
