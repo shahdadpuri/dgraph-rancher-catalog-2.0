@@ -88,7 +88,7 @@ spec:
           - "-c"
           - |
             set -ex
-            {{ .Values.DgraphServer.command }}{{ .Values.config.DefaultHostName }}{{ .Values.DgraphSeparator }}{{ .Values.config.DgraphZero_port }} {{ .Values.DgraphMemory }} {{ .Values.config.DgraphServer_memory }} {{ .Values.DgraphServer.commandtoZero }} {{ .Values.config.DefaultHostName }}{{ .Values.DgraphSeparator }}{{ .Values.config.DgraphZero_port }}
+            {{ .Values.DgraphServer.command }}{{ .Values.config.DefaultHostName }}{{ .Values.DgraphSeparator }}{{ .Values.config.DgraphServer_port_grpc_internal }} {{ .Values.DgraphMemory }} {{ .Values.config.DgraphServer_memory }} {{ .Values.DgraphServer.commandtoZero }} {{ .Values.config.DefaultHostName }}{{ .Values.DgraphSeparator }}{{ .Values.config.DgraphZero_port }}
            # dgraph server --my=                      0.0.0.0                               :                              7080                              --lru_mb               2048                                      --zero                                       0.0.0.0                                  :                             5080
         ports:
         - containerPort: {{ .Values.config.DgraphServer_port_http }}

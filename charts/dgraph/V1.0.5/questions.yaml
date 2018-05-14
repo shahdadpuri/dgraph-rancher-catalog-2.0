@@ -7,11 +7,11 @@ questions:
     default: "0.0.0.0"
     type: string
   - variable: config.DgraphZero_port
-    description: "Defines Dgraph's Zero GRPC Port."
+    description: "Defines Dgraph's Zero gRPC-external Port."
     default: 5080
     type: int
   - variable: config.DgraphZero_port_http
-    description: "Defines Dgraph's Zero HTTP Port."
+    description: "Defines Dgraph's Zero http-external Port."
     default: 6080
     type: int
   - variable: config.DgraphServer_memory
@@ -19,11 +19,15 @@ questions:
     default: 2048
     type: int
   - variable: config.DgraphServer_port
-    description: "Defines Dgraph's Server GRPC Port."
-    default: 9080
+    description: "Defines Dgraph's Server gRPC-external Port."
+    default: 9090
+    type: int
+  - variable: config.DgraphServer_port_grpc_internal
+    description: "Defines Dgraph's Server gRPC-internal Port."
+    default: 7080
     type: int
   - variable: config.DgraphServer_port_http
-    description: "Defines Dgraph's Server HTTP Port."
+    description: "Defines Dgraph's Server http-external Port."
     default: 8080
     type: int
   - variable: config.DgraphRatel_port
