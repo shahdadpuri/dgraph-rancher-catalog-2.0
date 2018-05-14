@@ -6,7 +6,7 @@ metadata:
     app: {{ template "Dgraph.name" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: {{ .Release.Name | quote }}
-    heritage: "{{ .Release.Service }}"
+    heritage: {{ .Release.Service | quote }}
 spec:
   serviceName: {{ template "Dgraph.fullname" . }}
   replicas: 1
@@ -17,10 +17,10 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ template "Dgraph.fullname" . }}
-        heritage: {{ .Release.Service | quote }}
-        release: {{ .Release.Name | quote }}
+        app: {{ template "Dgraph.name" . }}
         chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        release: {{ .Release.Name | quote }}
+        heritage: {{ .Release.Service | quote }}
     spec:
       containers:
       - name: dgraph-ratel
