@@ -26,6 +26,6 @@ spec:
     targetPort: 8000
     name: ratel-http
   selector:
-    app: {{ template "Dgraph.name" . }}
+    app: {{ template "Dgraph.fullname" . }}
 status:
   loadBalancer: {}
