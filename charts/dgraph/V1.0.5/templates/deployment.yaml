@@ -29,6 +29,7 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         ports:
         - containerPort: 8000
+          hostPort: 8000
           name: ratel-http
           protocol: TCP
         resources: {}
@@ -90,6 +91,7 @@ spec:
             dgraph server --my=$(hostname -f):7080 --lru_mb 2048 --zero dgraph-0.dgraph.default.svc.cluster.local:5080
         ports:
         - containerPort: 8080
+          hostPort: 8080
           name: server-http
         - containerPort: 9080
           name: server-grpc

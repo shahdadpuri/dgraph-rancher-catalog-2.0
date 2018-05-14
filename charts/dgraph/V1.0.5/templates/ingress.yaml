@@ -12,7 +12,7 @@ spec:
   - host: localhost
     http:
       paths:
-        - path: {{ default "/" .path }}
+        - path:
           backend:
             serviceName: {{ template "Dgraph.fullname" . }}
             servicePort: 8000
