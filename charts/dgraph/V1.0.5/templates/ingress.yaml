@@ -15,4 +15,4 @@ spec:
         - path:
           backend:
             serviceName: {{ template "Dgraph.fullname" . }}
-            servicePort: 8000
+            servicePort: {{ .Values.config.DgraphRatel_port }}

@@ -10,20 +10,20 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 5080
-    targetPort: 5080
+  - port: {{ .Values.config.config.DgraphZero_port }}
+    targetPort: {{ .Values.config.DgraphZero_port }}
     name: zero-grpc
-  - port: 6080
-    targetPort: 6080
+  - port: {{ .Values.config.DgraphZero_port_http }}
+    targetPort: {{ .Values.config.DgraphZero_port_http }}
     name: zero-http
-  - port: 8080
-    targetPort: 8080
+  - port: {{ .Values.config.DgraphServer_port_http }}
+    targetPort: {{ .Values.config.DgraphServer_port_http }}
     name: server-http
-  - port: 9080
-    targetPort: 9080
+  - port: {{ .Values.config.DgraphServer_port }}
+    targetPort: {{ .Values.config.DgraphServer_port }}
     name: server-grpc
-  - port: 8000
-    targetPort: 8000
+  - port: {{ .Values.config.DgraphRatel_port }}
+    targetPort: {{ .Values.config.DgraphRatel_port }}
     name: ratel-http
   selector:
     app: {{ template "Dgraph.fullname" . }}

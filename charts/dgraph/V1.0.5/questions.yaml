@@ -2,11 +2,31 @@ categories:
 - database
 - no_sql
 questions:
-  - variable: config.secrets_name
-    description: "Secret with 'username' and 'password' keys."
-    default: "rabbitmq"
-    type: string
   - variable: config.DefaultHostName
     description: "Default HostName"
     default: "0.0.0.0"
     type: string
+  - variable: config.DgraphZero_port
+    description: "Defines Dgraph's Zero GRPC Port."
+    default: 5080
+    type: int
+  - variable: config.DgraphZero_port_http
+    description: "Defines Dgraph's Zero HTTP Port."
+    default: 6080
+    type: int
+  - variable: config.DgraphServer_memory
+    description: "Defines the amount of memory Dgraph Server. Set an average of at least half of the available memory."
+    default: 2048
+    type: int
+  - variable: config.DgraphServer_port
+    description: "Defines Dgraph's Server GRPC Port."
+    default: 9080
+    type: int
+  - variable: config.DgraphServer_port_http
+    description: "Defines Dgraph's Server HTTP Port."
+    default: 8080
+    type: int
+  - variable: config.DgraphRatel_port
+    description: "Defines Dgraph's Ratel HTTP Port. ATTENTION: Don't edit Ratel port for now. It's here for future usages and let you know."
+    default: 8000
+    type: int

@@ -13,16 +13,21 @@ image:
 # service:
 #   type: ClusterIP
 
-Dgraph-Server:
+DgraphSeparator: ":"
+DgraphMemory: "--lru_mb"
+
+DgraphServer:
   enabled: true
+  command: "dgraph server --my="
+  commandtoZero: "--zero"
 
 DgraphZero:
   enabled: true
   command: "dgraph zero --my="
-  port: ":5080"
 
 Ratel:
   enabled: true
+  command: "dgraph-ratel"
 
   # {{ if .Values.Ratel.enabled }}
   #   {{ default "none" .Values.Ratel.name }}
