@@ -1,9 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
+  name: {{ template "Dgraph.fullname" . }}
   labels:
-    run: dgraph
-  name: dgraph
+    app: {{ template "Dgraph.name" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
 spec:
   type: LoadBalancer
   ports:
@@ -23,6 +26,6 @@ spec:
     targetPort: 8000
     name: ratel-http
   selector:
-    run: dgraph
+    app: {{ template "Dgraph.name" . }}
 status:
   loadBalancer: {}
