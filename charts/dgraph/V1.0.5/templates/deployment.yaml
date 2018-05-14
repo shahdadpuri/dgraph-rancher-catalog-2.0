@@ -23,14 +23,26 @@ spec:
         heritage: {{ .Release.Service | quote }}
     spec:
       containers:
+
       - name: dgraph-ratel
         image: dgraph/dgraph:latest
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         ports:
         - containerPort: 8000
           name: ratel-http
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        tty: true
         command:
           - dgraph-ratel
+
       - name: zero
         image: dgraph/dgraph:latest
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
@@ -42,15 +54,34 @@ spec:
         volumeMounts:
         - name: datadir
           mountPath: /dgraph
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        tty: true
         command:
           - bash
           - "-c"
           - |
             set -ex
             dgraph zero --my=$(hostname -f):5080
+
       - name: server
         image: dgraph/dgraph:latest
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        tty: true
         command:
           - bash
           - "-c"
@@ -70,6 +101,7 @@ spec:
       - name: datadir
         persistentVolumeClaim:
           claimName: datadir
+
   updateStrategy:
     type: RollingUpdate
   volumeClaimTemplates:
