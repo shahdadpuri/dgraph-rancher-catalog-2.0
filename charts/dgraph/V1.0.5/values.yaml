@@ -22,6 +22,10 @@ Dgraph-Zero:
 Ratel:
   enabled: true
 
+  # {{ if .Values.Ratel.enabled }}
+  #   {{ default "none" .Values.Ratel.name }}
+  # {{ end }}
+
 ## Persist data to a persitent volume
 ## Enable persistence using Persistent Volume Claims
 ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
