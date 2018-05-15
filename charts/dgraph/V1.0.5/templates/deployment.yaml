@@ -25,7 +25,7 @@ spec:
       containers:
 
       - name: dgraph-ratel
-        image: dgraph/dgraph:latest
+        image: "dgraph/dgraph:{{ .Values.useTag.Version }}"
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         ports:
         - containerPort: {{ .Values.config.DgraphRatel_port }}
@@ -45,7 +45,7 @@ spec:
           - {{ .Values.Ratel.command }}
 
       - name: zero
-        image: dgraph/dgraph:latest
+        image: "dgraph/dgraph:{{ .Values.useTag.Version }}"
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         ports:
         - containerPort: {{ .Values.config.DgraphZero_port }}
@@ -72,7 +72,7 @@ spec:
             {{ .Values.DgraphZero.command }}{{ .Values.config.DefaultHostName }}{{ .Values.DgraphSeparator }}{{ .Values.config.DgraphZero_port }}
 
       - name: server
-        image: dgraph/dgraph:latest
+        image: "dgraph/dgraph:{{ .Values.useTag.Version }}"
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         resources: {}
         securityContext:
