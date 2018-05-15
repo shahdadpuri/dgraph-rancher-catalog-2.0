@@ -10,7 +10,7 @@ questions:
   show_subquestion_if: false
   group: "Choose a version"
   subquestions:
-  - variable: useTag.Version
+  - variable: config.useTagVersion
     default: "latest"
     description: "Use a Dgraph container tag version of your preference - see more https://hub.docker.com/r/dgraph/dgraph/tags/"
     type: string
