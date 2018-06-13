@@ -1,4 +1,4 @@
-name: rbac
+1name: rbac
 version: 0.0.1
 appVersion: 1.0.5
 description: Neuro app
@@ -7,7 +7,7 @@ icon: https://pbs.twimg.com/profile_images/1000998267369373696/46g6d8j4_400x400.
 keywords:
 - neuro
 sources:
-- https://github.com/shahdadpuri/neuro-rancher-catalog-2.0
+- https://github.com/shahdadpuri/neuro-rancher-catalog-1.0
 maintainers:
   - name: Accelerite
     email: accelerite_incubator@persistent.com
